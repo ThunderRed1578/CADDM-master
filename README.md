@@ -1,12 +1,42 @@
 # Implicit Identity Leakage: The Stumbling Block to Improving Deepfake Detection Generalization
 
-This repo includes the authors' [Pytorch](https://pytorch.org/) implementation of the paper:
+Đây là đoạn mã của tác giả' [Pytorch](https://pytorch.org/) triển khai bài báo:
 
 #### [Implicit Identity Leakage: The Stumbling Block to Improving Deepfake Detection Generalization](https://arxiv.org/abs/2210.14457)
 
 Computer Vision and Pattern Recognition (CVPR) 2023
 
 [[arxiv](https://arxiv.org/abs/2210.14457)]
+
+## Hướng dẫn
+
+1. cài các thư viện cần thiết.
+  ```
+  pip install -r requirements.txt
+  ```
+
+2. Tải Pretrained weights  
+Tải pretrained weight ở đây: [here](https://drive.google.com/file/d/1JNMI4RGssgCOl9t05jkUa6imnw5XR5id/view?usp=sharing).  
+Và đưa vào thư mục checkpoints
+
+2. Đem các tập dữ liệu train_images và test_images vào vào thư mục train_images và test_images
+
+3. chạy lệnh
+  ```
+  python3 test.py   --cfg ./configs/caddm_test.cfg
+  ```
+
+## Results
+
+| Training Data | Backbone        | FF++       |
+| ------------- | --------------- | ---------- | 
+| FF++          | ResNet-34       | 99.70%     | 
+| FF++          | EfficientNet-b3 | 99.78%     | 
+| FF++          | EfficientNet-b4 | **99.79%** |
+
+Chú ý: Đơn vị đo là  *video-level AUC*.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Introduction
 
